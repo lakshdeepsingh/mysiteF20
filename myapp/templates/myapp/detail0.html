@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Detail page</title>
+</head>
+<body>
+    {% if topic %}
+        <h2> Topic Name: {{ topic.name }} </h2>
+        <p>Length: {{ topic.length }} weeks</p>
+        <h4> List of courses: </h4>
+        <ol>
+            {% for course in topic.courses.all %}
+                <li> {{ course.title }} &emsp;&emsp;&emsp;Price: {{ course.price }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There is no topic with given id!</strong>
+    {% endif %}
+    <p><a href="{% url 'myapp:index' %}">Main page</a></p>
+</body>
+</html>

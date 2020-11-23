@@ -1,0 +1,33 @@
+{% extends 'myapp/base.html' %}
+
+{% block myhdg %}
+    Hello Ravi
+{% endblock %}
+
+{% block body_block %}
+    {% if courses %}
+        <h2>Order confirmed</h2>
+        <br>
+        <h3>List of the courses in the order:</h3>
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th>Length</th>
+{#                <th>Price</th>#}
+            </tr>
+            {% for course  in courses %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ course.title }}</td>
+                    <td>{{ course.topic.name }}</td>
+                    <td>{{ course.topic.length }}</td>
+{#                    <td>{{ course.price }}</td>#}
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <strong>There are no available courses!</strong>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+body {
+  background-color: lightgrey;
+  color: blue;
+  font-size: 15px;
+  font-style: normal;
+  align-content: normal;
+}
+
+h1{
+    text-align: center;
+}
+
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
